@@ -1,0 +1,16 @@
+gpu:
+  index: 0
+  clocks_mhz: [3105,3045,2985,2925,2865,2805,2745,2685,2625,2565,2505,2445,2385,2325,2265,2205,2145,2085,2025,1965,1905,1845,1785,1725,1665,1605,1545,1485,1425,1365,1305,1245,1185,1065,1005]
+  # clock_mhz: []
+  sample_interval_ms: 100
+
+benchmark:
+  # job_name: phased_size4096_min_15sec
+  # job_name: baseline_phased_15sec_c25_m45
+  job_name: phased_size4096_c25_m45
+  command: "python benchmarks/pytorch_workload_bench.py --kind phased --size 4096 --repeats 1 --steps 1 --warmup-steps 1 --compute-phase-min 0.25 --memory-phase-min 0.45 --phase-cycles 3 --compute-intensity 4"
+  warmup_seconds: 2
+  repeats: 3
+
+output:
+  root_dir: data/raw

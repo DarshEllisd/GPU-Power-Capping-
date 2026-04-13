@@ -1,0 +1,13 @@
+gpu:
+  index: 0
+  clocks_mhz: []
+  sample_interval_ms: 100
+
+benchmark:
+  job_name: baseline_sequence_cmc_workload_sets
+  command: "python benchmarks/workload_sequence_bench.py --compute-dir workloads/compute_bound --memory-dir workloads/memory_bound --pattern c-m-c --phase-cycles 1 --model-repeats 1 --steps 1 --warmup-steps 1"
+  warmup_seconds: 2
+  repeats: 3
+
+output:
+  root_dir: data/raw

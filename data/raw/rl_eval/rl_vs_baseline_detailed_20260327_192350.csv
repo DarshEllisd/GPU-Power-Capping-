@@ -1,0 +1,7 @@
+workload,mode,repeat,runtime_s,avg_power_w,energy_j,power_log,controller_log
+mixed,baseline,1,29.750364,59.297628,1764.125986,data\raw\rl_eval\mixed_baseline_r1_192350_power.csv,
+mixed,baseline,2,29.639250,60.561801,1795.006350,data\raw\rl_eval\mixed_baseline_r2_192422_power.csv,
+mixed,baseline,3,29.948118,60.858949,1822.610970,data\raw\rl_eval\mixed_baseline_r3_192455_power.csv,
+mixed,rl,1,32.302329,54.102559,1747.638680,data\raw\rl_eval\mixed_rl_r1_192527_power.csv,data\raw\rl_eval\mixed_rl_r1_192527_controller.log
+mixed,rl,2,32.177013,54.283784,1746.690022,data\raw\rl_eval\mixed_rl_r2_192603_power.csv,data\raw\rl_eval\mixed_rl_r2_192603_controller.log
+mixed,rl,3,32.061826,54.494339,1747.187993,data\raw\rl_eval\mixed_rl_r3_192639_power.csv,data\raw\rl_eval\mixed_rl_r3_192639_controller.log

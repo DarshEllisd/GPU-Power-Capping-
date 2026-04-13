@@ -1,0 +1,24 @@
+Starting live RL controller (no rollback safety mode)...
+budget=5.00% | interval=1.00s | max_jump=120 MHz
+util=100.0% | util_std=0.0 | power=69.8W | burst_ewma=0.001s | slowdown_proxy=nan% | workload=mixed | cap=1905MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=69.6W | burst_ewma=0.239s | slowdown_proxy=nan% | workload=mixed | cap=1785MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=68.2W | burst_ewma=0.668s | slowdown_proxy=nan% | workload=mixed | cap=1785MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=67.2W | burst_ewma=1.255s | slowdown_proxy=nan% | workload=mixed | cap=1785MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=66.7W | burst_ewma=1.965s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=65.8W | burst_ewma=2.775s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=65.0W | burst_ewma=3.659s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=64.4W | burst_ewma=4.616s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=63.1W | burst_ewma=5.619s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=62.0W | burst_ewma=6.657s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=61.3W | burst_ewma=7.731s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=60.8W | burst_ewma=8.834s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=60.3W | burst_ewma=9.961s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=60.1W | burst_ewma=11.103s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=60.1W | burst_ewma=12.259s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=60.1W | burst_ewma=13.425s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=60.1W | burst_ewma=14.602s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=60.2W | burst_ewma=15.791s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=60.2W | burst_ewma=16.992s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=60.2W | burst_ewma=18.201s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=60.2W | burst_ewma=19.417s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False
+util=100.0% | util_std=0.0 | power=60.2W | burst_ewma=20.640s | slowdown_proxy=nan% | workload=compute | cap=1725MHz | budget=5.00% | budget_shield=True | dry_run=False

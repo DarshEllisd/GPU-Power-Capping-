@@ -1,0 +1,13 @@
+gpu:
+  index: 0
+  clocks_mhz: [3105,3045,2985,2925,2865,2805,2745,2685,2625,2565,2505,2445,2385,2325,2265,2205,2145,2085,2025,1965,1905,1845,1785,1725,1665,1605,1545,1485,1425,1365,1305,1245,1185,1065,1005,945, 885, 825, 765, 705, 645, 585, 525, 465, 405, 345, 285, 225]
+  sample_interval_ms: 100
+
+benchmark:
+  job_name: sequence_cmc_workload_sets
+  command: "python benchmarks/workload_sequence_bench.py --compute-dir workloads/compute_bound --memory-dir workloads/memory_bound --pattern c-m-c --phase-cycles 1 --model-repeats 1 --steps 1 --warmup-steps 1"
+  warmup_seconds: 2
+  repeats: 3
+
+output:
+  root_dir: data/raw

@@ -1,0 +1,13 @@
+gpu:
+  index: 0
+  clocks_mhz: [   945, 885, 825, 765, 705, 645, 585, 525, 465, 405, 345, 285, 225]
+  sample_interval_ms: 100
+
+benchmark:
+  job_name: compute_size4096
+  command: "python benchmarks/pytorch_workload_bench.py --kind compute --size 4096 --repeats 50 --steps 10 --warmup-steps 1"
+  warmup_seconds: 2
+  repeats: 3
+
+output:
+  root_dir: data/raw

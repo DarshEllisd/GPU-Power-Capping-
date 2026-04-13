@@ -1,0 +1,3 @@
+workload,mode,repeat,runtime_s,avg_power_w,energy_j,power_log,controller_log
+memory,baseline,1,12.623623,26.471092,334.161091,data\raw\rl_eval\memory_baseline_r1_095812_power.csv,
+memory,rl,1,12.499423,28.085776,351.055990,data\raw\rl_eval\memory_rl_r1_095827_power.csv,data\raw\rl_eval\memory_rl_r1_095827_controller.log

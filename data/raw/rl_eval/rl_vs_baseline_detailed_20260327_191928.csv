@@ -1,0 +1,3 @@
+workload,mode,repeat,runtime_s,avg_power_w,energy_j,power_log,controller_log
+mixed,baseline,1,35.073986,55.733727,1954.803939,data\raw\rl_eval\mixed_baseline_r1_191928_power.csv,
+mixed,rl,1,37.100487,49.544340,1838.119124,data\raw\rl_eval\mixed_rl_r1_192006_power.csv,data\raw\rl_eval\mixed_rl_r1_192006_controller.log

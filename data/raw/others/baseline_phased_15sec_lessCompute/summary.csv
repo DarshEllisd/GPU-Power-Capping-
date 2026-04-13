@@ -1,0 +1,4 @@
+run_id,clock_target_mhz,clock_applied_mhz,avg_clock_mhz,runtime_s,avg_power_w,energy_j,log_path
+baseline_r1_20260403_184914,-1,-1,2133.5663,183.6816,65.5847,12046.7114,data\raw\baseline_phased_15sec\baseline_r1_20260403_184914_power.csv
+baseline_r2_20260403_185218,-1,-1,2125.3901,183.9280,65.9383,12127.9098,data\raw\baseline_phased_15sec\baseline_r2_20260403_185218_power.csv
+baseline_r3_20260403_185523,-1,-1,2126.0042,183.8294,66.0465,12141.2995,data\raw\baseline_phased_15sec\baseline_r3_20260403_185523_power.csv

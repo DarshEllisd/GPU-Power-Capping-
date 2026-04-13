@@ -1,0 +1,7 @@
+workload,mode,repeat,runtime_s,avg_power_w,energy_j,power_log,controller_log
+phased,baseline,1,248.952847,68.129776,16961.101713,data\raw\rl_eval\phased_baseline_r1_111521_power.csv,
+phased,baseline,2,351.818153,68.955483,24259.790495,data\raw\rl_eval\phased_baseline_r2_111933_power.csv,
+phased,baseline,3,406.681896,69.056581,28084.061473,data\raw\rl_eval\phased_baseline_r3_112527_power.csv,
+phased,rl,1,390.944931,69.269944,27080.733434,data\raw\rl_eval\phased_rl_r1_113217_power.csv,data\raw\rl_eval\phased_rl_r1_113217_controller.log
+phased,rl,2,384.886575,69.240589,26649.773050,data\raw\rl_eval\phased_rl_r2_113851_power.csv,data\raw\rl_eval\phased_rl_r2_113851_controller.log
+phased,rl,3,414.359498,69.305300,28717.309183,data\raw\rl_eval\phased_rl_r3_114520_power.csv,data\raw\rl_eval\phased_rl_r3_114520_controller.log

@@ -1,0 +1,14 @@
+gpu:
+  index: 0
+  # clocks_mhz: [2100, 1905, 1710, 1515, 1320, 1125, 930, 735, 540, 345]
+  clock_mhz: []
+  sample_interval_ms: 100
+
+benchmark:
+  job_name: memory_size8192_TEST
+  command: "python benchmarks/pytorch_workload_bench.py --kind memory --size 8192 --repeats 50 --steps 10 --warmup-steps 1"
+  warmup_seconds: 2
+  repeats: 3
+
+output:
+  root_dir: data/raw
