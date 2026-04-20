@@ -1,0 +1,4 @@
+timestamp, power.draw [W], clocks.current.graphics [MHz], clocks.current.sm [MHz], clocks.current.memory [MHz], temperature.gpu, utilization.gpu [%], utilization.memory [%], memory.used [MiB], memory.total [MiB], pstate, pcie.link.gen.gpucurrent, pcie.link.width.current
+2026/04/20 23:10:55.039, 17.63, 2445, 2445, 7001, 52, 0, 0, 0, 6141, P3, 4, 8
+2026/04/20 23:10:55.149, 17.63, 2445, 2445, 7001, 52, 0, 0, 0, 6141, P3, 4, 8
+2026/04/20 23:10:55.259, 17.63, 2445, 2445, 7001, 52, 0, 0, 0, 6141, P3, 4, 8

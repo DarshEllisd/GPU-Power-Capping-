@@ -1,0 +1,4 @@
+run_id,clock_target_mhz,clock_applied_mhz,avg_clock_mhz,peak_clock_mhz,avg_temp_c,avg_gpu_util_pct,avg_mem_bw_util_pct,avg_vram_used_mib,avg_vram_alloc_pct,runtime_s,avg_power_w,energy_j,log_path
+baseline_r1_20260418_205427,-1,-1,1897.2212,2490.0000,69.0354,88.8496,25.0389,914.5097,14.8919,27.4641,63.4895,1743.6837,data\raw\compute\baseline\logs\01_sgemm_nn\baseline_r1_20260418_205427_power.csv
+baseline_r2_20260418_205536,-1,-1,1862.3864,2490.0000,73.9205,94.8523,26.6913,979.9621,15.9577,27.7495,67.1590,1863.6290,data\raw\compute\baseline\logs\01_sgemm_nn\baseline_r2_20260418_205536_power.csv
+baseline_r3_20260418_205636,-1,-1,1853.4321,2490.0000,74.9943,95.2199,26.4723,985.4340,16.0468,27.7992,67.7125,1882.3526,data\raw\compute\baseline\logs\01_sgemm_nn\baseline_r3_20260418_205636_power.csv

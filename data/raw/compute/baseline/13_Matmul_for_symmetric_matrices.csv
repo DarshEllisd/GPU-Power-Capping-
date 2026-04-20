@@ -1,4 +1,0 @@
-run_id,clock_target_mhz,clock_applied_mhz,avg_clock_mhz,runtime_s,avg_power_w,energy_j,log_path
-baseline_r1_20260412_213547,-1,-1,2042.6829,5.4518,57.7806,315.0100,data\raw\compute\baseline\logs\13_Matmul_for_symmetric_matrices\baseline_r1_20260412_213547_power.csv
-baseline_r2_20260412_213602,-1,-1,2033.0000,5.4657,60.0513,328.2246,data\raw\compute\baseline\logs\13_Matmul_for_symmetric_matrices\baseline_r2_20260412_213602_power.csv
-baseline_r3_20260412_213617,-1,-1,2026.2397,5.4874,60.1994,330.3396,data\raw\compute\baseline\logs\13_Matmul_for_symmetric_matrices\baseline_r3_20260412_213617_power.csv

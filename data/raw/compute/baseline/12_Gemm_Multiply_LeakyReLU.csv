@@ -1,4 +1,0 @@
-run_id,clock_target_mhz,clock_applied_mhz,avg_clock_mhz,runtime_s,avg_power_w,energy_j,log_path
-baseline_r1_20260410_230639,-1,-1,2001.6279,6.0529,56.8043,343.8332,data\raw\compute\baseline\logs\12_Gemm_Multiply_LeakyReLU\baseline_r1_20260410_230639_power.csv
-baseline_r2_20260410_230655,-1,-1,1991.9084,6.0442,57.3067,346.3717,data\raw\compute\baseline\logs\12_Gemm_Multiply_LeakyReLU\baseline_r2_20260410_230655_power.csv
-baseline_r3_20260410_230710,-1,-1,2009.4318,6.0495,58.1591,351.8316,data\raw\compute\baseline\logs\12_Gemm_Multiply_LeakyReLU\baseline_r3_20260410_230710_power.csv
