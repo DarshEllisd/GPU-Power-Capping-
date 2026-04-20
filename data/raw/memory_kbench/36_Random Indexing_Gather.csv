@@ -1,0 +1,8 @@
+run_id,clock_target_mhz,clock_applied_mhz,avg_clock_mhz,runtime_s,avg_power_w,energy_j,log_path
+clk3105_r1_20260411_111946,3105,3105,2505.0000,55.2550,50.3405,2781.5624,data\raw\memory\logs\36_Random Indexing_Gather\clk3105_r1_20260411_111946_power.csv
+clk3105_r2_20260411_112139,3105,3105,2504.6363,55.2901,50.3278,2782.6309,data\raw\memory\logs\36_Random Indexing_Gather\clk3105_r2_20260411_112139_power.csv
+clk3105_r3_20260411_112333,3105,3105,2504.6366,55.3449,50.3481,2786.5077,data\raw\memory\logs\36_Random Indexing_Gather\clk3105_r3_20260411_112333_power.csv
+clk3045_r1_20260411_112530,3045,3045,2504.6349,55.3090,50.3662,2785.7011,data\raw\memory\logs\36_Random Indexing_Gather\clk3045_r1_20260411_112530_power.csv
+clk3045_r2_20260411_112723,3045,3045,2504.6359,55.3030,50.4838,2791.9012,data\raw\memory\logs\36_Random Indexing_Gather\clk3045_r2_20260411_112723_power.csv
+clk3045_r3_20260411_112917,3045,3045,2504.2704,55.3238,50.4654,2791.9336,data\raw\memory\logs\36_Random Indexing_Gather\clk3045_r3_20260411_112917_power.csv
+clk2985_r1_20260411_113112,2985,2985,2505.0000,55.3135,50.4246,2789.1632,data\raw\memory\logs\36_Random Indexing_Gather\clk2985_r1_20260411_113112_power.csv

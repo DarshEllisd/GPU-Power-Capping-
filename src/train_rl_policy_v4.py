@@ -10,7 +10,7 @@ import pandas as pd
 from stable_baselines3 import PPO
 from stable_baselines3.common.env_checker import check_env
 
-from rl_api import RewardConfig, compute_reward
+from archived.rl_api import RewardConfig, compute_reward
 
 
 class SweepRLEnvV4(gym.Env[np.ndarray, int]):

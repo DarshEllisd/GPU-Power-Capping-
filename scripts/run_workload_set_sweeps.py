@@ -49,11 +49,15 @@ def reset_clock(gpu_index: int) -> None:
 
 
 def start_power_logger(gpu_index: int, log_path: Path, interval_ms: int) -> tuple[subprocess.Popen[str], object]:
-    query = "timestamp,power.draw,clocks.gr,utilization.gpu,utilization.memory"
+    query = (
+        "timestamp,power.draw,clocks.gr,clocks.sm,clocks.mem,temperature.gpu,"
+        "utilization.gpu,utilization.memory,memory.used,memory.total,"
+        "pstate,pcie.link.gen.gpucurrent,pcie.link.width.current"
+    )
     cmd = [
         "nvidia-smi",
         f"--query-gpu={query}",
-        "--format=csv,noheader,nounits",
+        "--format=csv,nounits",
         "-i",
         str(gpu_index),
         "-lms",
@@ -76,33 +80,67 @@ def stop_power_logger(process: subprocess.Popen[str], out_file: object) -> None:
     out_file.close()
 
 
-def measure_run_energy(log_path: Path, runtime_sec: float) -> tuple[float, float, float]:
+def measure_run_energy(
+    log_path: Path, runtime_sec: float
+) -> tuple[float, float, float, float, float, float, float, float, float]:
     if not log_path.exists():
-        return math.nan, math.nan, math.nan
+        return math.nan, math.nan, math.nan, math.nan, math.nan, math.nan, math.nan, math.nan, math.nan
 
     powers: list[float] = []
     clocks: list[float] = []
+    temps: list[float] = []
+    gpu_utils: list[float] = []
+    mem_bw_utils: list[float] = []
+    vram_used_mib: list[float] = []
+    vram_alloc_pct: list[float] = []
     with log_path.open("r", encoding="ascii", errors="ignore") as f:
         for line in f:
             text = line.strip()
             if not text:
                 continue
             parts = text.split(",")
-            if len(parts) < 3:
+            if len(parts) < 10:
                 continue
             try:
                 powers.append(float(parts[1].strip()))
                 clocks.append(float(parts[2].strip()))
+                temps.append(float(parts[5].strip()))
+                gpu_util = float(parts[6].strip())
+                mem_bw_util = float(parts[7].strip())
+                used_mib = float(parts[8].strip())
+                total_mib = float(parts[9].strip())
+
+                gpu_utils.append(gpu_util)
+                mem_bw_utils.append(mem_bw_util)
+                vram_used_mib.append(used_mib)
+                if total_mib > 0:
+                    vram_alloc_pct.append((used_mib / total_mib) * 100.0)
             except ValueError:
                 continue
 
     if not powers:
-        return math.nan, math.nan, math.nan
+        return math.nan, math.nan, math.nan, math.nan, math.nan, math.nan, math.nan, math.nan, math.nan
 
     avg_power = sum(powers) / len(powers)
     avg_clock = sum(clocks) / len(clocks) if clocks else math.nan
+    peak_clock = max(clocks) if clocks else math.nan
+    avg_temp = sum(temps) / len(temps) if temps else math.nan
+    avg_gpu_util = sum(gpu_utils) / len(gpu_utils) if gpu_utils else math.nan
+    avg_mem_bw_util = sum(mem_bw_utils) / len(mem_bw_utils) if mem_bw_utils else math.nan
+    avg_vram_used_mib = sum(vram_used_mib) / len(vram_used_mib) if vram_used_mib else math.nan
+    avg_vram_alloc_pct = sum(vram_alloc_pct) / len(vram_alloc_pct) if vram_alloc_pct else math.nan
     energy_j = avg_power * runtime_sec
-    return avg_power, avg_clock, energy_j
+    return (
+        avg_power,
+        avg_clock,
+        peak_clock,
+        avg_temp,
+        avg_gpu_util,
+        avg_mem_bw_util,
+        avg_vram_used_mib,
+        avg_vram_alloc_pct,
+        energy_j,
+    )
 
 
 def append_row(summary_path: Path, row: list[object]) -> None:
@@ -117,6 +155,12 @@ def append_row(summary_path: Path, row: list[object]) -> None:
                     "clock_target_mhz",
                     "clock_applied_mhz",
                     "avg_clock_mhz",
+                    "peak_clock_mhz",
+                    "avg_temp_c",
+                    "avg_gpu_util_pct",
+                    "avg_mem_bw_util_pct",
+                    "avg_vram_used_mib",
+                    "avg_vram_alloc_pct",
                     "runtime_s",
                     "avg_power_w",
                     "energy_j",
@@ -148,7 +192,17 @@ def run_module_benchmark(module_path: Path, model_repeats: int, steps: int, warm
         "--warmup-steps",
         str(warmup_steps),
     ]
-    result = subprocess.run(cmd, check=True, text=True, capture_output=True)
+    try:
+        result = subprocess.run(cmd, check=True, text=True, capture_output=True)
+    except subprocess.CalledProcessError as exc:
+        stdout = (exc.stdout or "").strip()
+        stderr = (exc.stderr or "").strip()
+        raise RuntimeError(
+            "Benchmark subprocess failed. "
+            f"module={module_path} returncode={exc.returncode}\n"
+            f"stdout:\n{stdout or '<empty>'}\n"
+            f"stderr:\n{stderr or '<empty>'}"
+        ) from exc
     runtime_sec: float | None = None
     for line in result.stdout.splitlines():
         text = line.strip()
@@ -234,7 +288,17 @@ def run_category(
             finally:
                 stop_power_logger(logger_proc, logger_file)
 
-            avg_power, avg_clock, energy_j = measure_run_energy(log_path, runtime_sec)
+            (
+                avg_power,
+                avg_clock,
+                peak_clock,
+                avg_temp,
+                avg_gpu_util,
+                avg_mem_bw_util,
+                avg_vram_used_mib,
+                avg_vram_alloc_pct,
+                energy_j,
+            ) = measure_run_energy(log_path, runtime_sec)
             append_row(
                 baseline_csv,
                 [
@@ -242,6 +306,12 @@ def run_category(
                     -1,
                     -1,
                     f"{avg_clock:.4f}",
+                    f"{peak_clock:.4f}",
+                    f"{avg_temp:.4f}",
+                    f"{avg_gpu_util:.4f}",
+                    f"{avg_mem_bw_util:.4f}",
+                    f"{avg_vram_used_mib:.4f}",
+                    f"{avg_vram_alloc_pct:.4f}",
                     f"{runtime_sec:.4f}",
                     f"{avg_power:.4f}",
                     f"{energy_j:.4f}",
@@ -250,6 +320,8 @@ def run_category(
             )
             print(
                 f"  baseline rep={rep} gpu_runtime={runtime_sec:.3f}s clock={avg_clock:.1f}MHz "
+                f"peakClock={peak_clock:.1f}MHz temp={avg_temp:.1f}C gpuUtil={avg_gpu_util:.1f}% "
+                f"memBw={avg_mem_bw_util:.1f}% vram={avg_vram_used_mib:.1f}MiB ({avg_vram_alloc_pct:.1f}%) "
                 f"power={avg_power:.2f}W energy={energy_j:.2f}J"
             )
 
@@ -279,7 +351,17 @@ def run_category(
                 finally:
                     stop_power_logger(logger_proc, logger_file)
 
-                avg_power, avg_clock, energy_j = measure_run_energy(log_path, runtime_sec)
+                (
+                    avg_power,
+                    avg_clock,
+                    peak_clock,
+                    avg_temp,
+                    avg_gpu_util,
+                    avg_mem_bw_util,
+                    avg_vram_used_mib,
+                    avg_vram_alloc_pct,
+                    energy_j,
+                ) = measure_run_energy(log_path, runtime_sec)
                 append_row(
                     sweep_csv,
                     [
@@ -287,6 +369,12 @@ def run_category(
                         cap,
                         applied,
                         f"{avg_clock:.4f}",
+                        f"{peak_clock:.4f}",
+                        f"{avg_temp:.4f}",
+                        f"{avg_gpu_util:.4f}",
+                        f"{avg_mem_bw_util:.4f}",
+                        f"{avg_vram_used_mib:.4f}",
+                        f"{avg_vram_alloc_pct:.4f}",
                         f"{runtime_sec:.4f}",
                         f"{avg_power:.4f}",
                         f"{energy_j:.4f}",
@@ -295,6 +383,8 @@ def run_category(
                 )
                 print(
                     f"  cap={applied} rep={rep} gpu_runtime={runtime_sec:.3f}s clock={avg_clock:.1f}MHz "
+                    f"peakClock={peak_clock:.1f}MHz temp={avg_temp:.1f}C gpuUtil={avg_gpu_util:.1f}% "
+                    f"memBw={avg_mem_bw_util:.1f}% vram={avg_vram_used_mib:.1f}MiB ({avg_vram_alloc_pct:.1f}%) "
                     f"power={avg_power:.2f}W energy={energy_j:.2f}J"
                 )
 

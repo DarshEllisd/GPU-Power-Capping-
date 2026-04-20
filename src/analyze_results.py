@@ -16,6 +16,18 @@ def aggregate_by_clock(df: pd.DataFrame) -> pd.DataFrame:
     }
     if "avg_clock_mhz" in df.columns:
         agg_spec["avg_clock_mhz"] = ("avg_clock_mhz", "mean")
+    if "peak_clock_mhz" in df.columns:
+        agg_spec["peak_clock_mhz"] = ("peak_clock_mhz", "mean")
+    if "avg_temp_c" in df.columns:
+        agg_spec["avg_temp_c"] = ("avg_temp_c", "mean")
+    if "avg_gpu_util_pct" in df.columns:
+        agg_spec["avg_gpu_util_pct"] = ("avg_gpu_util_pct", "mean")
+    if "avg_mem_bw_util_pct" in df.columns:
+        agg_spec["avg_mem_bw_util_pct"] = ("avg_mem_bw_util_pct", "mean")
+    if "avg_vram_used_mib" in df.columns:
+        agg_spec["avg_vram_used_mib"] = ("avg_vram_used_mib", "mean")
+    if "avg_vram_alloc_pct" in df.columns:
+        agg_spec["avg_vram_alloc_pct"] = ("avg_vram_alloc_pct", "mean")
 
     grouped = df.groupby("clock_applied_mhz", as_index=False).agg(**agg_spec).sort_values(
         "clock_applied_mhz", ascending=False
@@ -76,6 +88,13 @@ def main() -> None:
     required = {
         "run_id",
         "clock_applied_mhz",
+        "avg_clock_mhz",
+        "peak_clock_mhz",
+        "avg_temp_c",
+        "avg_gpu_util_pct",
+        "avg_mem_bw_util_pct",
+        "avg_vram_used_mib",
+        "avg_vram_alloc_pct",
         "runtime_s",
         "avg_power_w",
         "energy_j",

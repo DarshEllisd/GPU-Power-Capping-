@@ -1,0 +1,4 @@
+run_id,clock_target_mhz,clock_applied_mhz,avg_clock_mhz,runtime_s,avg_power_w,energy_j,log_path
+baseline_r1_20260411_074537,-1,-1,2425.8333,3.7851,39.9671,151.2781,data\raw\memory\baseline\logs\28_HardSigmoid\baseline_r1_20260411_074537_power.csv
+baseline_r2_20260411_074548,-1,-1,2447.3333,3.7849,41.1904,155.9028,data\raw\memory\baseline\logs\28_HardSigmoid\baseline_r2_20260411_074548_power.csv
+baseline_r3_20260411_074600,-1,-1,2447.3333,3.7854,41.3254,156.4333,data\raw\memory\baseline\logs\28_HardSigmoid\baseline_r3_20260411_074600_power.csv

@@ -1,0 +1,4 @@
+run_id,clock_target_mhz,clock_applied_mhz,avg_clock_mhz,runtime_s,avg_power_w,energy_j,log_path
+baseline_r1_20260411_065239,-1,-1,2444.6552,3.7866,45.1221,170.8607,data\raw\memory\baseline\logs\26_GELU_\baseline_r1_20260411_065239_power.csv
+baseline_r2_20260411_065250,-1,-1,2446.0112,3.7875,44.9188,170.1318,data\raw\memory\baseline\logs\26_GELU_\baseline_r2_20260411_065250_power.csv
+baseline_r3_20260411_065301,-1,-1,2443.1667,3.7863,44.5004,168.4920,data\raw\memory\baseline\logs\26_GELU_\baseline_r3_20260411_065301_power.csv
