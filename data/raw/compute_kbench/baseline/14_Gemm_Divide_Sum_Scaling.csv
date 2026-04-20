@@ -1,0 +1,4 @@
+run_id,clock_target_mhz,clock_applied_mhz,avg_clock_mhz,runtime_s,avg_power_w,energy_j,log_path
+baseline_r1_20260412_222027,-1,-1,2008.5484,6.0253,58.9296,355.0700,data\raw\compute\baseline\logs\14_Gemm_Divide_Sum_Scaling\baseline_r1_20260412_222027_power.csv
+baseline_r2_20260412_222043,-1,-1,2001.8605,6.0684,58.7641,356.6060,data\raw\compute\baseline\logs\14_Gemm_Divide_Sum_Scaling\baseline_r2_20260412_222043_power.csv
+baseline_r3_20260412_222059,-1,-1,1987.4419,6.0781,58.8688,357.8106,data\raw\compute\baseline\logs\14_Gemm_Divide_Sum_Scaling\baseline_r3_20260412_222059_power.csv

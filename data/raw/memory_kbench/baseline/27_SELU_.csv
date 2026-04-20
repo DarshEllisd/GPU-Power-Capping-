@@ -1,0 +1,4 @@
+run_id,clock_target_mhz,clock_applied_mhz,avg_clock_mhz,runtime_s,avg_power_w,energy_j,log_path
+baseline_r1_20260411_071916,-1,-1,2429.1071,3.7834,41.2257,155.9739,data\raw\memory\baseline\logs\27_SELU_\baseline_r1_20260411_071916_power.csv
+baseline_r2_20260411_071927,-1,-1,2440.3448,3.7854,41.3353,156.4726,data\raw\memory\baseline\logs\27_SELU_\baseline_r2_20260411_071927_power.csv
+baseline_r3_20260411_071937,-1,-1,2442.4719,3.7834,41.3524,156.4527,data\raw\memory\baseline\logs\27_SELU_\baseline_r3_20260411_071937_power.csv

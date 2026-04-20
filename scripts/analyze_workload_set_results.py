@@ -15,6 +15,13 @@ from src.analyze_results import add_relative_metrics, aggregate_by_clock, pick_r
 
 METRIC_COLUMNS = [
     "clock_applied_mhz",
+    "avg_clock_mhz",
+    "peak_clock_mhz",
+    "avg_temp_c",
+    "avg_gpu_util_pct",
+    "avg_mem_bw_util_pct",
+    "avg_vram_used_mib",
+    "avg_vram_alloc_pct",
     "runtime_s",
     "avg_power_w",
     "energy_j",
@@ -26,6 +33,22 @@ METRIC_COLUMNS = [
 ]
 
 
+RAW_REQUIRED_COLUMNS = {
+    "run_id",
+    "clock_applied_mhz",
+    "avg_clock_mhz",
+    "peak_clock_mhz",
+    "avg_temp_c",
+    "avg_gpu_util_pct",
+    "avg_mem_bw_util_pct",
+    "avg_vram_used_mib",
+    "avg_vram_alloc_pct",
+    "runtime_s",
+    "avg_power_w",
+    "energy_j",
+}
+
+
 def analyze_one(
     capped_csv: Path,
     baseline_csv: Path,
@@ -34,6 +57,14 @@ def analyze_one(
 ) -> tuple[int, float, float, float, pd.DataFrame]:
     raw = pd.read_csv(capped_csv)
     baseline_raw = pd.read_csv(baseline_csv)
+
+    raw_missing = sorted(RAW_REQUIRED_COLUMNS.difference(raw.columns))
+    if raw_missing:
+        raise ValueError(f"{capped_csv} missing required new-format columns: {raw_missing}")
+
+    baseline_missing = sorted(RAW_REQUIRED_COLUMNS.difference(baseline_raw.columns))
+    if baseline_missing:
+        raise ValueError(f"{baseline_csv} missing required new-format columns: {baseline_missing}")
 
     agg = aggregate_by_clock(raw)
     baseline_agg = aggregate_by_clock(baseline_raw)

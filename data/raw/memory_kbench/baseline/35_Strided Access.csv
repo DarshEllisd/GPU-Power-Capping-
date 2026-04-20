@@ -1,0 +1,4 @@
+run_id,clock_target_mhz,clock_applied_mhz,avg_clock_mhz,runtime_s,avg_power_w,energy_j,log_path
+baseline_r1_20260411_103641,-1,-1,2130.0000,0.0098,10.7867,0.1055,data\raw\memory\baseline\logs\35_Strided Access\baseline_r1_20260411_103641_power.csv
+baseline_r2_20260411_103644,-1,-1,2130.0000,0.0093,11.0956,0.1030,data\raw\memory\baseline\logs\35_Strided Access\baseline_r2_20260411_103644_power.csv
+baseline_r3_20260411_103647,-1,-1,2130.0000,0.0094,10.9300,0.1025,data\raw\memory\baseline\logs\35_Strided Access\baseline_r3_20260411_103647_power.csv

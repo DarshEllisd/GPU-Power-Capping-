@@ -1,0 +1,4 @@
+run_id,clock_target_mhz,clock_applied_mhz,avg_clock_mhz,runtime_s,avg_power_w,energy_j,log_path
+baseline_r1_20260411_100238,-1,-1,2463.4914,5.5698,43.5641,242.6448,data\raw\memory\baseline\logs\34_Element-wise Operations\baseline_r1_20260411_100238_power.csv
+baseline_r2_20260411_100252,-1,-1,2459.1322,5.5921,43.5445,243.5043,data\raw\memory\baseline\logs\34_Element-wise Operations\baseline_r2_20260411_100252_power.csv
+baseline_r3_20260411_100306,-1,-1,2458.3613,5.5917,43.8295,245.0820,data\raw\memory\baseline\logs\34_Element-wise Operations\baseline_r3_20260411_100306_power.csv

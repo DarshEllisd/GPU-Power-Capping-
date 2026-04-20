@@ -1,21 +1,3 @@
 category,workload,capped_csv,baseline_csv,analysis_csv,recommended_clock_mhz,recommended_slowdown_pct,recommended_energy_saving_pct,baseline_runtime_s
-compute,10_ConvTranspose2d_MaxPool_Hardtanh_Mean_Tanh,data\raw\compute\10_ConvTranspose2d_MaxPool_Hardtanh_Mean_Tanh.csv,data\raw\compute\baseline\10_ConvTranspose2d_MaxPool_Hardtanh_Mean_Tanh.csv,data\processed\compute\10_ConvTranspose2d_MaxPool_Hardtanh_Mean_Tanh_analysis.csv,1965,4.0223,12.5569,10.8886
-compute,11_ConvTranspose2d_BatchNorm_Tanh_MaxPool_GroupNorm,data\raw\compute\11_ConvTranspose2d_BatchNorm_Tanh_MaxPool_GroupNorm.csv,data\raw\compute\baseline\11_ConvTranspose2d_BatchNorm_Tanh_MaxPool_GroupNorm.csv,data\processed\compute\11_ConvTranspose2d_BatchNorm_Tanh_MaxPool_GroupNorm_analysis.csv,2325,3.7384,7.7287,9.9509
-compute,12_Gemm_Multiply_LeakyReLU,data\raw\compute\12_Gemm_Multiply_LeakyReLU.csv,data\raw\compute\baseline\12_Gemm_Multiply_LeakyReLU.csv,data\processed\compute\12_Gemm_Multiply_LeakyReLU_analysis.csv,1905,2.1376,-0.7283,6.0489
-compute,12_Matmul_with_diagonal_matrices_,data\raw\compute\12_Matmul_with_diagonal_matrices_.csv,data\raw\compute\baseline\12_Matmul_with_diagonal_matrices_.csv,data\processed\compute\12_Matmul_with_diagonal_matrices__analysis.csv,2085,2.7887,0.9344,5.1337
-compute,13_ConvTranspose3d_Mean_Add_Softmax_Tanh_Scaling,data\raw\compute\13_ConvTranspose3d_Mean_Add_Softmax_Tanh_Scaling.csv,data\raw\compute\baseline\13_ConvTranspose3d_Mean_Add_Softmax_Tanh_Scaling.csv,data\processed\compute\13_ConvTranspose3d_Mean_Add_Softmax_Tanh_Scaling_analysis.csv,2205,2.7807,4.4284,55.4708
-compute,13_Matmul_for_symmetric_matrices,data\raw\compute\13_Matmul_for_symmetric_matrices.csv,data\raw\compute\baseline\13_Matmul_for_symmetric_matrices.csv,data\processed\compute\13_Matmul_for_symmetric_matrices_analysis.csv,2505,1.6411,-1.9744,5.4719
-memory,19_ReLU,data\raw\memory\19_ReLU.csv,data\raw\memory\baseline\19_ReLU.csv,data\processed\memory\19_ReLU_analysis.csv,1005,0.3248,42.5734,10.5796
-memory,20_LeakyReLU,data\raw\memory\20_LeakyReLU.csv,data\raw\memory\baseline\20_LeakyReLU.csv,data\processed\memory\20_LeakyReLU_analysis.csv,1065,0.3100,42.4394,10.5791
-memory,21_Sigmoid,data\raw\memory\21_Sigmoid.csv,data\raw\memory\baseline\21_Sigmoid.csv,data\processed\memory\21_Sigmoid_analysis.csv,1065,0.3479,43.6003,10.5763
-memory,22_Tanh,data\raw\memory\22_Tanh.csv,data\raw\memory\baseline\22_Tanh.csv,data\processed\memory\22_Tanh_analysis.csv,1065,0.2436,45.1184,10.5763
-memory,23_Softmax,data\raw\memory\23_Softmax.csv,data\raw\memory\baseline\23_Softmax.csv,data\processed\memory\23_Softmax_analysis.csv,1005,-0.6472,49.4122,10.1881
-memory,24_LogSoftmax,data\raw\memory\24_LogSoftmax.csv,data\raw\memory\baseline\24_LogSoftmax.csv,data\processed\memory\24_LogSoftmax_analysis.csv,1005,-0.1391,45.5121,10.2093
-memory,26_GELU_,data\raw\memory\26_GELU_.csv,data\raw\memory\baseline\26_GELU_.csv,data\processed\memory\26_GELU__analysis.csv,1005,0.5065,44.2726,10.5830
-memory,27_SELU_,data\raw\memory\27_SELU_.csv,data\raw\memory\baseline\27_SELU_.csv,data\processed\memory\27_SELU__analysis.csv,1005,0.4362,42.2055,10.5688
-memory,28_HardSigmoid,data\raw\memory\28_HardSigmoid.csv,data\raw\memory\baseline\28_HardSigmoid.csv,data\processed\memory\28_HardSigmoid_analysis.csv,1005,0.1947,42.9340,10.5816
-memory,29_Softplus,data\raw\memory\29_Softplus.csv,data\raw\memory\baseline\29_Softplus.csv,data\processed\memory\29_Softplus_analysis.csv,1005,0.2874,46.1557,10.5768
-memory,31_ELU,data\raw\memory\31_ELU.csv,data\raw\memory\baseline\31_ELU.csv,data\processed\memory\31_ELU_analysis.csv,1065,0.2807,42.6098,10.5815
-memory,32_HardTanh,data\raw\memory\32_HardTanh.csv,data\raw\memory\baseline\32_HardTanh.csv,data\processed\memory\32_HardTanh_analysis.csv,1065,0.1499,42.3193,10.5825
-memory,33_Large Tensor Copy,data\raw\memory\33_Large Tensor Copy.csv,data\raw\memory\baseline\33_Large Tensor Copy.csv,data\processed\memory\33_Large Tensor Copy_analysis.csv,1065,0.3391,42.1332,10.6166
-memory,34_Element-wise Operations,data\raw\memory\34_Element-wise Operations.csv,data\raw\memory\baseline\34_Element-wise Operations.csv,data\processed\memory\34_Element-wise Operations_analysis.csv,3105,0.0032,-1.1747,15.6058
+compute,01_sgemm_nn,data\raw\compute\01_sgemm_nn.csv,data\raw\compute\baseline\01_sgemm_nn.csv,data\processed\compute\01_sgemm_nn_analysis.csv,1845,-0.5818,1.3852,38.6543
+compute,02_sgemm_nt,data\raw\compute\02_sgemm_nt.csv,data\raw\compute\baseline\02_sgemm_nt.csv,data\processed\compute\02_sgemm_nt_analysis.csv,1845,0.6546,-0.0835,37.5922

@@ -1,0 +1,4 @@
+run_id,clock_target_mhz,clock_applied_mhz,avg_clock_mhz,runtime_s,avg_power_w,energy_j,log_path
+baseline_r1_20260412_080730,-1,-1,2303.0997,55.2118,65.7565,3630.5341,data\raw\compute\baseline\logs\13_ConvTranspose3d_Mean_Add_Softmax_Tanh_Scaling\baseline_r1_20260412_080730_power.csv
+baseline_r2_20260412_080933,-1,-1,2272.7522,55.5706,67.6513,3759.4188,data\raw\compute\baseline\logs\13_ConvTranspose3d_Mean_Add_Softmax_Tanh_Scaling\baseline_r2_20260412_080933_power.csv
+baseline_r3_20260412_081130,-1,-1,2268.3511,55.6299,68.0857,3787.5982,data\raw\compute\baseline\logs\13_ConvTranspose3d_Mean_Add_Softmax_Tanh_Scaling\baseline_r3_20260412_081130_power.csv
