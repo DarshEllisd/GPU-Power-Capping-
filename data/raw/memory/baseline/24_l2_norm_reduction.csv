@@ -1,0 +1,7 @@
+run_id,clock_target_mhz,clock_applied_mhz,avg_clock_mhz,peak_clock_mhz,avg_temp_c,avg_gpu_util_pct,avg_mem_bw_util_pct,avg_vram_used_mib,avg_vram_alloc_pct,runtime_s,avg_power_w,energy_j,log_path
+baseline_r1_20260423_141509,-1,-1,1934.7059,2520.0000,46.3922,70.5882,70.5882,561.6863,9.1465,4.0394,36.3828,146.9657,data\raw\memory\baseline\logs\24_l2_norm_reduction\baseline_r1_20260423_141509_power.csv
+baseline_r2_20260423_141520,-1,-1,2338.2692,2520.0000,47.8077,72.1442,73.6538,557.4519,9.0775,4.0412,39.1830,158.3465,data\raw\memory\baseline\logs\24_l2_norm_reduction\baseline_r2_20260423_141520_power.csv
+baseline_r3_20260423_141531,-1,-1,2323.4135,2520.0000,48.4231,74.0385,74.0385,555.8654,9.0517,4.0413,39.3480,159.0157,data\raw\memory\baseline\logs\24_l2_norm_reduction\baseline_r3_20260423_141531_power.csv
+baseline_r4_20260423_141543,-1,-1,2337.8571,2520.0000,49.0667,72.7619,73.4286,545.0286,8.8752,4.0402,39.5531,159.8021,data\raw\memory\baseline\logs\24_l2_norm_reduction\baseline_r4_20260423_141543_power.csv
+baseline_r5_20260423_141554,-1,-1,2345.6796,2520.0000,49.5146,73.7864,73.7864,555.5340,9.0463,4.0416,39.9640,161.5200,data\raw\memory\baseline\logs\24_l2_norm_reduction\baseline_r5_20260423_141554_power.csv
+baseline_r6_20260423_141606,-1,-1,2338.2692,2520.0000,49.9327,72.1154,72.1154,550.3077,8.9612,4.0396,39.5661,159.8296,data\raw\memory\baseline\logs\24_l2_norm_reduction\baseline_r6_20260423_141606_power.csv
